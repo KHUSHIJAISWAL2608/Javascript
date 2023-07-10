@@ -1,0 +1,22 @@
+//question 1
+let str= "har\""
+console.log(str.length)
+ 
+//question2
+const sentence="he is very good person"
+const word= "good"
+
+console.log(sentence.includes(word));
+console.log(`This sentence include good ${sentence.includes(word)? 'is ' : 'is not'}in the sentence`)
+//problem 3
+console.log(word.toLowerCase())
+console.log(word.toUpperCase())
+//problem 4
+let str2="Please give Rs 1000"
+let amount =str2.slice(15);
+console.log(amount)
+
+//problem 5
+let friend="deepika"
+friend[3]="R"
+console.log(friend)

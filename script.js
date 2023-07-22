@@ -1,9 +1,20 @@
-const changebg =()=>{
-document.body.firstElementChild.computedStyleMap.backgroundColor ="red"
-
-}
-changebg();
-let b= document.body
-console.log("first child of b is ", b.firstElementChild)
-let c= document.getElementsByClassName("card-title")[0]
-c.style.color="red"
+html {
+    height: 100%;
+    width: 100%;
+  }
+  ul{
+    display:flex;
+    background:silver;
+  }
+  ul li{
+    list-style: none ;
+    padding: 5px 25px;
+  }
+  /* li:hover{
+    color: red;
+    cursor:pointer;
+  } */
+  
+  /* nav {
+    background: silver;
+  } */

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Location object</title>
+</head>
+<body>
+    <button onclick="myfunc()"> Click Me </button>
+    <button onclick="myfunction()"> Click Me </button>
+
+    <script>
+        function myfunc(){
+            window.location.href="https://www.youtube.com/";
+        };
+
+        function myfunction(){
+          document.write(window.location.pathname)  ;
+        };
+    </script>
+</body>
+</html>

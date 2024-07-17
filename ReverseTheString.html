@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse the string</title>
+</head>
+
+<body>
+
+
+    <input type="text" id="inputdata" onkeyup="reverse()">
+    <input type="text" id="showdata">
+
+    <script>
+
+        function reverse() {
+
+
+
+            var formdata = document.getElementById("inputdata").value;
+            console.log(formdata);
+             var printstr = "";
+
+
+            for (var i = formdata.length-1; i >= 0; i--) {
+                // console.log(i)
+                printstr = printstr + formdata[i];
+
+
+
+            }
+
+            document.getElementById("showdata").value = printstr;
+
+        }
+
+
+    </script>
+</body>
+
+</html>

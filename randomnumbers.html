@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers</title>
+</head>
+<body>
+    <script>
+        // random numbers btween 1 to 20
+
+        let random = Math.floor(Math.random()*20 );
+        document.write( "Random number between 1 to 20 with floor = ",random , "<br>");
+
+        // without floor
+        var randomnum= Math.random()*30;
+        document.write("Random number generated between 1 to 30 without floor = ",randomnum , "<br>");
+        // Using math.round
+
+    document.write("Random nuber between 1 to 20 using round =", Math.round(Math.random()*20) , "<br>");
+
+
+    // using ceil - ceil giver the upper value of decimal
+
+    document.write("Random number between 1 to 20 using ceil object = ", Math.ceil(Math.random()*20));
+
+    </script>
+</body>
+</html>

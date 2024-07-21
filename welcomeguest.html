@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome guest problem</title>
+</head>
+
+<body>
+    Enter Your Name : <input type="text" id="name">
+
+    <button onclick="myfunc()"> Submit </button>
+    <br>
+
+    <script>
+
+        var guest = ["guest1", "guest2", "guest3", "guest4", "guest5", "guest6", "guest7", "guest8", "guest9", "guest10"];
+
+
+        function myfunc() {
+
+            var guestname = document.getElementById("name").value;
+            console.log(guestname)
+
+
+            var check = guest.includes(guestname);
+            console.log(check);
+            if (check == 1) {
+                document.write("Welcome to our family function");
+            }
+            else {
+                document.write("Sorry!!  Your name is not in the list")
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

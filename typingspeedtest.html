@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Typing Speed Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Josefin Sans", sans-serif;
+
+    }
+
+    .mainDiv {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background-color: #3498db;
+
+
+
+    }
+
+    textarea {
+        background-color: #444;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+        border-radius: 10px 10px 0 0;
+        border: 20px solid #34495e;
+        color: white;
+        font-size: 1.3em;
+        max-width: 100%;
+    }
+
+    .centerDiv {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .mainbtn {
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 5px solid #2980b9;
+        background: #ecf0f1;
+        font-size: 1rem;
+    }
+
+    .text-area {
+        width: 100vw;
+    }
+</style>
+
+<body>
+
+
+    <div class="mainDiv">
+        <div class="centerDiv">
+            <h1>Welcome to typing speed test</h1> <br>
+            <h2 class="msg" id="msg">
+
+            </h2>
+
+            <br>
+            <div class="text-area"> <textarea id="mywords" rows="10" cols="100" placeholder="Remember"></textarea></div>
+            <button id="btn" class="mainbtn">Start</button>
+
+            <br>
+            <br>
+            <h3 id="result"></h3>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const setofwords = ["My name is khushi jaiswal",
+            "i am twenty-one years old", "my hobby is playing badminton", " i am a frontend developer", " i am working at real11 fantasy sports "];
+
+
+        const message = document.getElementById('msg');
+        const typedwords = document.getElementById('mywords');
+        const btn = document.getElementById('btn');
+        typedwords.disabled = true;
+
+        let starttime, endTime;
+
+
+        const playgame = () => {
+            let randomnumber = Math.floor(Math.random() * setofwords.length);
+            console.log(randomnumber);
+            message.innerText = setofwords[randomnumber];
+
+            let date = new Date();
+            startTime = date.getTime();
+            btn.innerText = 'Done';
+
+
+
+
+        }
+
+        const endPlay = () => {
+
+            const result = document.getElementById('result');
+
+            let date = new Date();
+
+            endTime = date.getTime();
+
+            let totalTime = (endTime - startTime) / 1000;
+            console.log(totalTime);
+
+            let totalString = typedwords.value;
+            let wordCount = wordcounter(totalString);
+
+            let speed = Math.round((wordCount / totalTime) * 60);
+            let resultText = `You typed ${speed} words per miniute and `;
+
+
+
+            let finalMsg = resultText + compareWords(message.innerText, totalString);
+
+
+
+
+            result.innerText = finalMsg;
+
+            typedwords.value = " ";
+
+
+
+        }
+
+
+        const wordcounter = (totalString) => {
+            let totalWords = totalString.split(" ").length;
+            console.log(totalWords);
+            return totalWords;
+        }
+        const compareWords = (str1, str2) => {
+            let words1 = str1.split(" ");
+            let words2 = str2.split(" ");
+            let count = 0;
+
+
+            words1.forEach(function (item, index) {
+
+                if (item == words2[index]) {
+                    count++;
+                }
+
+            });
+            let errorWords = words1.length - count;
+            return (count + " correct out of " + words1.length);
+
+        }
+
+
+
+
+
+
+
+        btn.addEventListener('click', function () {
+            console.log(this);
+
+
+            if (this.innerText == 'Start') {
+                typedwords.disabled = false;
+                playgame();
+
+            }
+
+            else if (this.innerText == 'Done') {
+
+                typedwords.disabled = true;
+                btn.innerText = 'Start';
+                endPlay();
+
+
+
+
+
+            }
+        });
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
